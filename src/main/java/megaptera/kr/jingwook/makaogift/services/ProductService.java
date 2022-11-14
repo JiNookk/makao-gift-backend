@@ -1,5 +1,6 @@
 package megaptera.kr.jingwook.makaogift.services;
 
+import megaptera.kr.jingwook.makaogift.exceptions.ProductNotFound;
 import megaptera.kr.jingwook.makaogift.models.Product;
 import megaptera.kr.jingwook.makaogift.repositories.ProductRepository;
 import org.springframework.data.domain.Page;
@@ -20,8 +21,11 @@ public class ProductService {
     public Page<Product> list(int page) {
         Pageable pageable = PageRequest.of(page - 1, 8);
 
-        Page<Product> products = productRepository.findAll(pageable);
+        return productRepository.findAll(pageable);
+    }
 
-        return products;
+    public Product product(long id) {
+        return productRepository.findById(id)
+                .orElseThrow(ProductNotFound::new);
     }
 }

@@ -33,6 +33,21 @@ class ProductsControllerTest {
     private PageService pageService;
 
     @Test
+    void product() throws Exception {
+        Product product = Product.fake("item for test");
+        given(productService.product(1L))
+                .willReturn(product);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/products/1"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(
+                        containsString("\"name\":\"item for test\"")
+                ));
+
+        verify(productService).product(1);
+    }
+
+    @Test
     void list() throws Exception {
         Product product = Product.fake("테스트용 아이템");
 
@@ -50,7 +65,6 @@ class ProductsControllerTest {
                 ));
 
         verify(productService).list(1);
-
         verify(pageService).pages(1);
     }
 }

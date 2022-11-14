@@ -25,8 +25,8 @@ public class BackdoorController {
             long productId = i + 1;
 
             jdbcTemplate.update("INSERT INTO " +
-                            "product(id, description, image_path, manufacturer, name, price)" +
-                            "VALUES(?, '테스트용 아이템입니다.', '../resources/test.jpg', '메가테라', '테스트 아이템', 10000)",
+                            "product(id, description, image_path, manufacturer, name, pieces, price)" +
+                            "VALUES(?, '테스트용 아이템입니다.', '../resources/test.jpg', '메가테라', '테스트 아이템', 2, 10000)",
                     productId);
         }
 

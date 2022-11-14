@@ -6,17 +6,19 @@ public class ProductDto {
     private String manufacturer;
     private String description;
     private String imagePath;
+    private Long pieces;
     private Long price;
 
     public ProductDto() {
     }
 
-    public ProductDto(Long id, String name, String manufacturer, String description, String imagePath, Long price) {
+    public ProductDto(Long id, String name, String manufacturer, String description, String imagePath, Long pieces, Long price) {
         this.id = id;
         this.name = name;
         this.manufacturer = manufacturer;
         this.description = description;
         this.imagePath = imagePath;
+        this.pieces = pieces;
         this.price = price;
     }
 
@@ -38,6 +40,10 @@ public class ProductDto {
 
     public String getImagePath() {
         return imagePath;
+    }
+
+    public Long getPieces() {
+        return pieces;
     }
 
     public Long getPrice() {
