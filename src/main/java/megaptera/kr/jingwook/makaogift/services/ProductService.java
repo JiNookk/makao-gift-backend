@@ -26,6 +26,6 @@ public class ProductService {
 
     public Product product(long id) {
         return productRepository.findById(id)
-                .orElseThrow(ProductNotFound::new);
+                .orElseThrow(() -> new ProductNotFound(id));
     }
 }

@@ -47,7 +47,7 @@ class ProductServiceTest {
     @Test
     void findProductWithNotExistingid() {
         given(productRepository.findById(any()))
-                .willThrow(new ProductNotFound());
+                .willThrow(new ProductNotFound(any()));
 
 
         assertThrows(ProductNotFound.class, () -> {

@@ -2,6 +2,7 @@ package megaptera.kr.jingwook.makaogift.models;
 
 import megaptera.kr.jingwook.makaogift.dtos.ProductDto;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ import java.util.Objects;
 public class Product {
     @Id
     @GeneratedValue
+    @Column(name = "PRODUCT_ID")
     private Long id;
 
     private Name name;
@@ -29,7 +31,8 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, Name name, String manufacturer, String description, String imagePath, Long pieces, Long price) {
+    public Product(Long id, Name name, String manufacturer,
+                   String description, String imagePath, Long pieces, Long price) {
         this.id = id;
         this.name = name;
         this.manufacturer = manufacturer;

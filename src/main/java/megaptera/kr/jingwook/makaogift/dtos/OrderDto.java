@@ -1,46 +1,40 @@
 package megaptera.kr.jingwook.makaogift.dtos;
 
 public class OrderDto {
-    private Long productId;
-    private Long orderCount;
-    private Long totalPrice;
-    private String to;
-    private String address;
-    private String message;
+    private Long id;
+    private String imagePath;
+    private String manufacturer;
+    private String name;
+    private String receiver;
 
     public OrderDto() {
     }
 
-    public OrderDto(Long productId, Long orderCount, Long totalPrice, String to, String address, String message) {
-        this.productId = productId;
-        this.orderCount = orderCount;
-        this.totalPrice = totalPrice;
-        this.to = to;
-        this.address = address;
-        this.message = message;
+    public OrderDto(Long id, String imagePath, String manufacturer, String name, String receiver) {
+        this.id = id;
+        this.imagePath = imagePath;
+        this.manufacturer = manufacturer;
+        this.name = name;
+        this.receiver = receiver;
     }
 
-    public Long getProductId() {
-        return productId;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public Long getOrderCount() {
-        return orderCount;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public Long getTotalPrice() {
-        return totalPrice;
+    public String getName() {
+        return name;
     }
 
-    public String getTo() {
-        return to;
+    public String getReceiver() {
+        return receiver;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public String getMessage() {
-        return message;
+    public Long getId() {
+        return id;
     }
 }
